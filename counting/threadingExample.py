@@ -4,11 +4,17 @@ import threading
 
 def taskA():
     # code for the task to be executed concurrently
-    a = 123456789+987654321
+    a = 0
+    for i in range(100):
+        a += 1
+        print(f"a: {a}")
 
 def taskB():
     # code for the task to be executed concurrently
-    b = 123456789+987654321-143602023
+    b = 0
+    for i in range(100):
+        b += 1
+        print(f"b: {b}")
 
 # create multiple threads
 threadA = threading.Thread(target=taskA)
